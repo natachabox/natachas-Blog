@@ -1,0 +1,589 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 1180px;
+    margin: auto;
+    color: #373737;
+    border-left: 5px solid #373737;
+    border-right: 5px solid #373737;
+
+
+}
+
+.navbar {
+    background-color: white;
+    border: none;
+    font-family: "Alegreya Sans SC", Helvetica, Arial, sans-serif;
+    font-weight: 900;
+    line-height: 1.625;
+    max-width: 1180px;
+    margin: auto;
+}
+
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #373737;
+}
+.navbar-inverse .navbar-nav > li > a:hover {
+    color: #373737;
+}
+
+.navbar-inner {
+    border-left: 5px solid #373737;
+    border-right: 5px solid #373737;
+    text-align:center;
+}
+.navbar-collapse ul {
+    border-bottom: 2px dotted grey;
+}
+
+.navbar .nav,
+.navbar .nav > li {
+    float:none;
+    display:inline-block;
+    *display:inline; /* ie7 fix */
+    *zoom:1; /* hasLayout ie7 trigger */
+    vertical-align: top;
+}
+
+
+
+@media screen and (min-width: 768px) {
+    .navbar-header {
+        display: none;
+    }
+
+}
+
+.container {
+    padding: 0% 5% 0% 5%;
+}
+
+.topRow {
+    border-top: 2px solid black;
+    padding-right: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    align-content: stretch;
+}
+
+.blogFlux {
+    border-right: 1px solid black;
+    margin-right: 5px;
+    padding: 0;
+    align-content: stretch;
+}
+
+.sideBar {
+    border-left: 1px solid black;
+    padding-left: 20px;
+    margin-left: 2px;
+    width: 40%;
+    margin-right: 0;
+    padding-right: 0;
+    align-content: stretch;
+}
+
+article {
+    margin: 5px 0 0 0;
+    padding-bottom: 0;
+    margin-bottom: 80px;
+    border-bottom: 2px solid #373737;
+}
+
+.banner {
+    height: 200px;
+    background-image: url("../images/natachasblog2.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 70%;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.banner h1 {
+    text-align: center;
+    border: none;
+    padding-top : 50px;
+    color: white;
+    font-family: 'Kaushan Script', cursive, sans-serif;
+    font-size: 40px;
+}
+
+.banner h2 {
+    text-align: center;
+    border: none;
+    color: white;
+    font-family: 'Kaushan Script', cursive;
+    font-size: 24px;
+    padding-top: 0px;
+
+}
+
+article h2 {
+    text-align: left;
+    color: #000000;
+    margin: 5px 0px 0px 0px;
+    padding-bottom: 5px;
+    font-family: 'Cinzel', serif;
+    font-size: 22px;
+}
+
+
+article h2 a {
+    color: #000000;
+}
+
+article h2 a:hover {
+    color: #590212;
+    text-decoration: none;
+}
+
+.author {
+    text-align: left;
+    border-bottom: 1px solid black;
+    margin-top: 0;
+    padding-top: 0;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.author a {
+    color: black;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+}
+
+article img {
+    width: 98%;
+    margin-bottom: 15px;
+}
+
+.description {
+    font-family: 'Raleway', sans-serif;
+    padding-right: 2%;
+    padding-bottom: 15px;
+    margin-bottom: 3px;
+    line-height: 2;
+    border-bottom: 2px solid #373737;
+}
+
+article ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 2px solid #373737;
+    border-top: 2px solid #373737;
+    height: 50px;
+    margin-bottom: 3px;
+
+}
+
+article ul li {
+    display: flex;
+    align-items: center;
+}
+
+article ul li:first-child {
+    margin-left: -40px;
+}
+
+article ul li:last-child {
+    margin-right: 2%;
+    color : #373737;
+    font-family: 'IM Fell French Canon SC', serif;
+    font-size: 18px;
+
+}
+
+.readMore {
+    color : #373737;
+    font-family: 'IM Fell French Canon SC', serif;
+    font-size: 18px;
+}
+
+.readMore:hover {
+    color: #F26716;
+    text-decoration: none;
+}
+
+
+.pager a {
+    color : #373737;
+    border: 1px solid #373737;
+    font-family: 'Raleway', sans-serif;
+}
+
+.pager a:hover {
+    color: #F26716;
+}
+
+.pagination li a {
+    color : #373737;
+    border: none;
+    font-family: 'Raleway', sans-serif;
+}
+
+.pagination li a:hover {
+    color: #F26716;
+    background-color: none;
+}
+
+.endRow {
+    background-image: url("../images/bandefooter1.jpg");
+    background-repeat: repeat-x;
+    background-size: 4%;
+    background-position: 0 4px;
+    height: 33px;
+    border-top:3px solid #373737;
+    border-bottom: 3px solid #373737;
+    padding-top: 5px;
+}
+
+
+
+/********************************************
+footer
+*********************************************/
+footer {
+    background-color: #373737;
+    width: 100%;
+    color: white;
+    height: 150px;
+    margin-top: 5px;
+    margin-bottom: 0;
+    padding-top: 20px;
+}
+
+footer a {
+    color: white;
+}
+
+footer p {
+    font-family: "Cinzel", sans-serif;
+    font-weight: 900;
+    font-size: 14px;
+}
+
+
+
+/********************************************
+side nav bar
+*********************************************/
+
+.well {
+    background-color: white;
+    border: none;
+    border-radius: 0;
+    margin-left: -20px;
+}
+
+.socialSide {
+    text-align: center;
+    height: 60px;
+    border-bottom: 2px solid #373737;
+}
+
+.socialSide ul {
+    margin: 0;
+    margin-top: -10px;
+}
+
+.socialSide li {
+    padding: 5px 30px;
+    font-size: 28px;
+}
+
+.socialSide a {
+    color: #373737;
+}
+
+.presentationSide {
+    padding: 20px 50px;
+    border-bottom: 2px solid lightgrey;
+    margin-bottom: 3px;
+}
+.presentationSide h3{
+    font-family: 'Homemade Apple', cursive;
+    text-align: center;
+}
+
+.presentationSide p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: "Alegreya Sans SC", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+}
+
+.presentationSide .photoPresentation {
+    text-align: center;
+}
+.presentationSide img {
+    width: 50%;
+    border-radius: 50%;
+}
+
+.presentationSide .contactPresentation {
+    text-align: center;
+    margin-top: 20px;
+}
+.presentationSide a {
+    font-family: "Cinzel", sans-serif;
+    font-size: 16px;
+    color: #373737;
+}
+
+.categories {
+    margin-top: 0px;
+    margin-bottom: 3px;
+    border-top: 2px solid lightgrey;
+    border-bottom: 2px solid lightgrey;
+    text-align: center;
+
+}
+
+.categories h4 {
+    font-family: 'IM Fell French Canon SC', serif;
+}
+
+.categories li a {
+    color: #373737;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+}
+
+.categories li a:hover {
+    color: #F26716;
+    text-decoration: none;
+}
+
+.categories .allCatSide {
+      margin-top: 20px;
+}
+
+.categories .allCatSide a{
+    color: #373737;
+    font-weight: 600;
+
+}
+
+.popularSide {
+    margin-top: 0;
+    border-top: 2px solid lightgrey;
+}
+
+.popularSide img {
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 40px;
+    border-radius: 20%;
+}
+
+
+.popularSide h4 a {
+    font-size: 12px;
+    color: #373737;
+    font-family: "Alegreya Sans SC", Helvetica, Arial, sans-serif;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+
+/***********************************************
+One article View
+************************************************/
+
+.descriptionDetails {
+    font-family: 'Raleway', sans-serif;
+    padding-right: 2%;
+    padding-bottom: 15px;
+    margin-bottom: 3px;
+    line-height: 2;
+}
+
+.fullstory {
+    font-family: 'Raleway', sans-serif;
+    padding-right: 2%;
+    padding-bottom: 15px;
+    margin-bottom: 3px;
+    line-height: 2;
+}
+
+.tips {
+    font-family: 'Raleway', sans-serif;
+    padding-right: 2%;
+    padding-bottom: 15px;
+    margin-bottom: 3px;
+    line-height: 2;
+}
+
+
+h5 {
+    font-family: 'IM Fell French Canon SC', serif;
+    font-size: 20px;
+}
+
+.starPic {
+    width: 25%;
+}
+
+.commentsArticle h4 {
+    font-family: 'IM Fell French Canon SC', serif;
+}
+
+.commentsArticle .form-group {
+    font-family: "Alegreya Sans SC", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+}
+
+.commentsArticle .form-group {
+    font-family: "Alegreya Sans SC", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+}
+
+.commentsArticle .btn {
+    font-family: "Alegreya Sans SC", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+}
+
+
+.allComments a {
+    font-family: "Alegreya Sans SC", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+}
+
+.allComments h4 {
+    font-family: 'IM Fell French Canon SC', serif;
+    font-size: 18px;
+}
+
+
+.allComments p {
+    font-family: 'Raleway', sans-serif;
+}
+
+.allComments .media {
+}
+
+.allComments .pull-left {
+    width: 20%;
+}
+
+/*****************************************
+categorie View
+****************************************/
+
+
+.thumbnails .caption h3 {
+    visibility: hidden;
+    font-family: "Alegreya Sans SC", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    margin-top: -90px;
+    margin-bottom: 90px;
+}
+
+.thumbnails a:hover .caption h3 {
+    visibility: visible;
+    font-family: "Alegreya Sans SC", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    color: white;
+    text-decoration: none;
+}
+
+
+.thumbnails a:hover {
+    text-decoration: none;
+}
+
+/*****************************************
+All categories View
+****************************************/
+.thumbnail2 {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #373737;
+}
+
+.thumbnail2 a {
+    text-decoration: none;
+    color: #373737;
+}
+
+.thumbnail2 a:hover {
+   opacity: 0.5;
+}
+
+.thumbnail2 h3 {
+    margin-top: 0;
+}
+
+.thumbnail2 p {
+    margin-bottom: 40px;
+}
+
+
+/*****************************************
+Contact View
+****************************************/
+
+.bannerContact {
+    margin-top: 50px;
+}
+
+.map {
+    margin: 25px 0;
+}
+
+.contactSide img {
+     width: 15%;
+     border-radius: 50%;
+}
+
+.contactSide {
+    padding-top: 50px;
+}
+
+/*****************************************
+Login Page
+****************************************/
+
+.endLoginPage {
+    margin-bottom: 200px;
+}
+
+.form-signin-heading {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+
+/*****************************************
+responsive
+****************************************/
+
+
+@media screen and (max-width: 992px) {
+    .socialSide li {
+        padding: 5px 5px;
+        font-size: 28px;
+    }
+}
+
+@media screen and (max-width: 670px) {
+    .sideBar {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 765px) {
+    .navbar-toggle {
+        background-color: lightgrey;
+    }
+    .navbar-inverse .navbar-brand:hover {
+        color: #373737;
+    }
+}
+

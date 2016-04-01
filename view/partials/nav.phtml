@@ -1,0 +1,105 @@
+<?php
+$sql="SELECT * FROM categorie ";
+$requete = $connexion -> prepare($sql);
+$requete -> execute();
+$navcategorie=$requete->fetchAll();
+
+//var_dump($navcategorie);
+
+//requete pour avoir les 3 articles les mieux notés
+
+$sql="SELECT article.id, titre, image, ROUND(AVG(note),1) as note FROM article INNER JOIN commentaire ON article.id=article_id GROUP BY article.id ORDER BY note DESC LIMIT 0,3";
+$requete = $connexion -> prepare($sql);
+$requete -> execute();
+$bestNote=$requete->fetchAll();
+
+//var_dump($bestNote);
+
+?>
+
+            <!-- Blog Sidebar Widgets Column -->
+            <div class="col-md-4 sideBar">
+
+                <!-- Social networks -->
+
+                <div class="well socialSide">
+                    <ul class='list-inline'>
+                        <li>
+                            <a href="https://twitter.com/theverynats">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/theverynats">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/theverynats">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+
+                <!-- Social networks -->
+
+                <div class="well presentationSide">
+
+                    <h3>Hello,</h3>
+
+                    <p>My Name is Natacha. I am passionate about cooking, DIY and Clothing. So I decided to create this blog to share my passions with you. I've been living in Paris for the past 10 years and I'll be happy to share my tips with you.</p>
+
+                    <div class="photoPresentation">
+                       <img src="../view/images/tomateCerise.JPG" alt="Tomate Cerise">
+                    </div>
+                    <div class="contactPresentation">
+                        <a href="">Contact Me</a>
+                    </div>
+                </div>
+
+
+
+                <!-- Blog Categories Well -->
+                <div class="well categories">
+                    <h4>Browse articles :</h4>
+                    <div class="row">
+                        
+                            <ul class="list-unstyled">
+                                <?php foreach ($navcategorie as $key => $value): ?>
+                                <div class="col-md-12 text-center">
+                                    <li><a href="index.php?page=unecategorie&idcat=<?= $value["id"]; ?>">
+                                        <?= $value["titre"]; ?>
+                                    </a>
+                                    </li>
+                                </div>
+                            <?php endforeach; ?>
+                            </ul>
+                        
+                        <!-- /.col-lg-6 -->
+                    </div>
+                    <!-- /.row -->
+                    <div class="allCatSide">
+                        <a href="index.php?page=categories">Browse All <i class="fa fa-angle-double-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Side Widget Well -->
+                <div class="well popularSide">
+                    <h4 class="text-center">Popular Articles</h4>
+                    <?php foreach ($bestNote as $key => $value): ?>
+                            <div class="popPhoto">
+                                <img class="img-responsive" src="view/images/<?=($value["image"]);?>" alt="">
+                            </div>
+                            <h4 class="text-center">
+                                <a href="?page=article&id-article=<?=$value["id"]?>"><?= ($value["titre"]); ?></a>
+                            </h4>
+                    <?php endforeach; ?>
+
+
+                </div>
+
+
+            </div>

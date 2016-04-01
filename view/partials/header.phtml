@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Natacha's Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="view/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <?php if($page=="home"): ?>
+        <link href="view/css/blog-home.css" rel="stylesheet">
+    <?php elseif($page=="article"): ?>
+        <link href="view/css/blog-post.css" rel="stylesheet">
+    <?php elseif($page=="login"): ?>
+        <link href="view/css/blog-post.css" rel="stylesheet">
+    <?php elseif($page=="inscription"): ?>
+        <link href="view/css/blog-post.css" rel="stylesheet">
+    <?php elseif($page=="categories"): ?>
+        <link href="view/css/offcanvas.css" rel="stylesheet">
+    <?php elseif($page=="unecategorie"): ?>
+        <link href="view/css/heroic-features.css" rel="stylesheet">
+    <?php elseif($page=="ajouterArticle"): ?>
+    <link href="view/css/blog-post.css" rel="stylesheet">
+    <link rel="stylesheet" href="view/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="view/css/jquery-ui.theme.min.css">
+    <?php endif; ?>
+
+    <link rel="stylesheet" href="view/css/style.css">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!--fontawesome-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+    <!--google fonts-->
+    <link href='https://fonts.googleapis.com/css?family=Alegreya+SC:400,900' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:400,900' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,600,900' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,600,900|IM+Fell+French+Canon+SC' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,600,900|IM+Fell+French+Canon+SC|Homemade+Apple' rel='stylesheet' type='text/css'>
+
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+        <div class="navbar-inner">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.php">Natacha's Blog</a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="index.php">Home</a>
+                        </li>
+                        <li>
+                        <a href="index.php?page=unecategorie&idcat=1">Recipes</a>
+                        </li>
+                        <li>
+                        <a href="index.php?page=unecategorie&idcat=2">DIY</a>
+                        </li>
+                        <li>
+                        <a href="index.php?page=unecategorie&idcat=3">Clothing</a>
+                        </li>
+                        <li>
+                            <a href="index.php?page=categories">Archives</a>
+                        </li>
+                        <li>
+                            <a href="index.php?page=contact">Contact</a>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <?php if (isConnected() == true): ?>
+                                        <a href="index.php?page=logout">Logout</a>
+                                    <?php else: ?>
+                                        <a href="index.php?page=login">Login</a>
+                                    <?php endif; ?>
+                                </li>
+                                <?php if (isConnected() == true): ?>
+                                    <li>
+                                        <a href="index.php?page=ajouterArticle">Add article</a>
+                                    </li>
+                                    <li>
+                                        <a href="index.php?page=inscription">Create new user</a>
+                                    </li>
+                                <?php endif; ?>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+        <!-- /.container -->
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">

@@ -1,0 +1,63 @@
+<?php include "partials/header.phtml"; ?>
+
+        <div class="banner">
+            <!--
+            <h1 class="page-header">
+                Theverynats
+            </h1>
+            <h2>Food - Clothing - DIY</h2>
+            -->
+        </div>
+
+        <!-- Title -->
+
+        <!-- Page Features -->
+        <div class="row topRow">
+
+            <div class="col-md-7 blogFlux">
+
+                <article>
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            <h2>
+                                <?=($categorie["titre"]);?>
+                            </h2>
+                            <p class="author">
+                                <a href="#"><?= ($categorie["description"]); ?></a>
+                            </p>
+
+
+                            <div class="row text-center">
+                                <?php foreach ($artCategorie as $key => $value): ?>
+
+                                    <div class="col-md-4 col-sm-6">
+                                        <div class="thumbnails">
+                                            <a href="?page=article&id-article=<?=$value["id"]?>">
+                                                <img src="view/images/<?=($value["image"]);?>" alt="">
+                                                <div class="caption">
+                                                    <h3><?= ($value["titre"]); ?></h3>
+                                                </div>
+                                            </a>
+
+                                        </div>
+                                    </div>
+
+                                <?php endforeach; ?>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </article>
+
+            </div><!--/.col-md-8-->
+
+        <!--sidebar-->
+        <?php include "partials/nav.phtml"; ?>
+
+        </div>
+        <!-- /.row -->
+
+        <!-- Footer -->
+        <?php include "partials/footer.phtml"; ?>

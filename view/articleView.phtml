@@ -1,0 +1,113 @@
+<?php include "partials/header.phtml"; ?>
+
+        <div class="banner">
+            <!--
+            <h1 class="page-header">
+                Theverynats
+            </h1>
+            <h2>Food - Clothing - DIY</h2>
+            -->
+        </div>
+
+        <div class="topRow row">
+
+            <!-- Blog Post Content Column -->
+            <div class="col-lg-7 blogFlux">
+
+                <article>
+                <!-- Blog Post -->
+
+                    <div class="col-md-12">
+                        <div>
+                            <h2>
+                                <a href="?page=article&id-article=<?=$article["id"]?>"><?= ($article["titre"]); ?></a>
+                            </h2>
+                            <p class="author">
+                                by <a href="index.php"><?= ($article["auteur"]); ?></a>
+                            </p>
+
+                            <img class="img-responsive" src="view/images/<?=($article["image"]);?>" alt="">
+
+                            <h5>
+                                The Story
+                            </h5>
+                            <p class="descriptionDetails" ><?= ($article["description"]); ?></p>
+
+                            <h5>You will need:
+                            </h5>
+                            <p class="fullstory" ><?= ($article["fullstory"]); ?></p>
+
+                            <h5>Tips
+                            </h5>
+                            <p class="tips" ><?= ($article["tips"]); ?></p>
+                        </div>
+                        <!-- Blog Comments -->
+
+                        <!-- Comments Form -->
+                        <div class="well commentsArticle">
+                            <h4>Leave a Comment:</h4>
+                            <form role="form" method="POST" id="formCom">
+                                <div class="form-group">
+                                    <div>
+                                        Name :
+                                        <input type="text" name="auteur" class="form-control">
+                                    </div>
+                                    <div>
+                                        Rating :
+                                        <select name="note" id="note" class="form-control">
+                                            <optgroup>
+                                                <option value="0">0</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+
+                                            </optgroup>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        Comment :
+                                        <textarea class="form-control" rows="3" name="comment"></textarea>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-warning">Submit</button>
+                            </form>
+                        </div>
+
+
+                        <!-- Posted Comments -->
+
+                        <div class="allComments">
+                            <!-- Comment -->
+                            <?php foreach ($comments as $key => $value): ?>
+                                <div class="media">
+                                    <a class="pull-left" href="#">
+                                        score: <?= $value["note"] ?>
+                                        <img class="media-object starPic" src="../view/images/jonquille.jpg" alt="fleur">
+                                    </a>
+                                    <div class="media-body">
+                                        <h4 class="media-heading"><?= $value["auteur"] ?>
+                                            <small><?= $value["date_creation"] ?></small>
+                                        </h4>
+                                        <p><?= $value["contenu"] ?></p>
+
+                                    </div>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+
+                    </div>
+                </article>
+
+            </div>
+
+
+        <!-- sidebar -->
+        <?php include "partials/nav.phtml"; ?>
+
+        </div>
+        <!-- /.row -->
+
+        <!-- Footer -->
+        <?php include "partials/footer.phtml"; ?>

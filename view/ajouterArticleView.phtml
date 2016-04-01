@@ -1,0 +1,84 @@
+<?php include "partials/header.phtml"; ?>
+
+    <?php if(!empty($_SESSION["messageFlash"])) : ?>
+    <p class="alert alert-success"><?= $_SESSION['messageFlash']; ?></p>
+    <?php unset($_SESSION["messageFlash"]); endif; ?>
+
+        <div class="row">
+
+            <!-- Blog Post Content Column -->
+            <div class="col-md-8">
+
+            	
+
+            	<form action="" method="POST" enctype="multipart/form-data">
+            		<div>
+            			titre
+            			<br/>
+            			<input type="text" name="titre" class="form-control">
+            		</div>
+
+            		<div>short description
+						<br/>
+						<textarea name="description" id="" cols="30" rows="3" class="form-control"></textarea>
+					</div>
+
+					<div>
+						full description
+						<br/>
+						<textarea name="fullstory" id="" cols="30" rows="10" class="form-control"></textarea>
+					</div>
+
+					<div>
+						Tips
+						<br/>
+						<textarea name="tips" id="" cols="30" rows="3" class="form-control"></textarea>
+					</div>
+
+            		<div>
+            			image
+            			<br/>
+            			<input type="file" name="image" class="form-control">
+            		</div>
+
+                    <div>
+                        date
+                        <br/>
+                        <input type="text" name="date" class="form-control" id="dateInput">
+                    </div>
+
+            		<div>
+            			auteur
+            			<br/>
+            			<input type="text" name="auteur" class="form-control">
+            		</div>
+
+            		<div>
+            			categorie
+            			<br/>
+            			<select name="categorie" id="cat" class="form-control">
+            				<optgroup>
+            					<?php foreach ($categorie as $key => $value): ?>
+            						<option value="<?= $value["id"]; ?>" name="categorie"><?= $value["titre"]; ?></option>
+            					<?php endforeach; ?>
+            				</optgroup>
+            			</select>
+            		</div>
+
+            		<div>
+            			<button class="btn btn-primary" id="addArticleBtn">Enregistrer</button>
+            		</div>
+
+
+            	</form>
+
+           	</div>
+
+           
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Footer -->
+        <?php include "partials/footer.phtml"; ?>

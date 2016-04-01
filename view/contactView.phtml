@@ -1,0 +1,170 @@
+<?php include "partials/header.phtml"; ?>
+
+<div class="banner bannerContact">
+    <!--
+    <h1 class="page-header">
+        Theverynats
+    </h1>
+    <h2>Food - Clothing - DIY</h2>
+    -->
+</div>
+
+<div class="row topRow">
+
+    <!-- Blog Entries Column -->
+    <div class="container map">
+        <div class="row">
+            <div class="col-sm-6">
+                <div id="map" style="width: 100%; height: 400px;"></div>
+
+                <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+
+                <script type="text/javascript">
+                    var myLatlng = new google.maps.LatLng(48.145019,7.32469500000002);
+
+                    var myOptions = {
+                        zoom: 14,
+                        center: myLatlng,
+                        mapTypeId: google.maps.MapTypeId.ROADMAP,
+                        styles: [
+                            {
+                                "featureType": "administrative",
+                                "elementType": "all",
+                                "stylers": [
+                                    {
+                                        "visibility": "on"
+                                    },
+                                    {
+                                        "lightness": 33
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "landscape",
+                                "elementType": "all",
+                                "stylers": [
+                                    {
+                                        "color": "#f2e5d4"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "poi.park",
+                                "elementType": "geometry",
+                                "stylers": [
+                                    {
+                                        "color": "#c5dac6"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "poi.park",
+                                "elementType": "labels",
+                                "stylers": [
+                                    {
+                                        "visibility": "on"
+                                    },
+                                    {
+                                        "lightness": 20
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "road",
+                                "elementType": "all",
+                                "stylers": [
+                                    {
+                                        "lightness": 20
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "road.highway",
+                                "elementType": "geometry",
+                                "stylers": [
+                                    {
+                                        "color": "#c5c6c6"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "road.arterial",
+                                "elementType": "geometry",
+                                "stylers": [
+                                    {
+                                        "color": "#e4d7c6"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "road.local",
+                                "elementType": "geometry",
+                                "stylers": [
+                                    {
+                                        "color": "#fbfaf7"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "water",
+                                "elementType": "all",
+                                "stylers": [
+                                    {
+                                        "visibility": "on"
+                                    },
+                                    {
+                                        "color": "#acbcc9"
+                                    }
+                                ]
+                            }
+                        ]
+                    };
+
+                    var map = new google.maps.Map(document.getElementById('map'), myOptions);
+                    var marker = new google.maps.Marker({
+                        position: myLatlng,
+                        map: map,
+                        title: "You are here!"
+                    });
+                </script>
+            </div>
+            <div class="col-sm-6 contactSide text-center">
+
+                <div class="photoPresentation">
+                    <img src="../view/images/tomateCerise.JPG" alt="Tomate Cerise">
+                </div>
+                <h1>Contact
+                </h1>
+                <p><i class="fa fa-map-marker"></i> The Nats House - Bennwhir
+                </p>
+                <p><i class="fa fa-phone"></i> 06 87 66 63 57
+                </p>
+
+                <div class="">
+                    <ul class='list-inline'>
+                        <li>
+                            <a href="https://twitter.com/theverynats">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/theverynats">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/theverynats">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- /.row -->
+
+<!-- Footer -->
+<?php include "partials/footer.phtml"; ?>

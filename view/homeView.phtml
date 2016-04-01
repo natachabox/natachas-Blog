@@ -1,0 +1,96 @@
+<?php include "partials/header.phtml"; ?>
+
+        <div class="banner">
+            <!--
+            <h1 class="page-header">
+                Theverynats
+            </h1>
+            <h2>Food - Clothing - DIY</h2>
+            -->
+        </div>
+
+        <div class="row topRow">
+            
+            <!-- Blog Entries Column -->
+            <div class="col-md-7 blogFlux">
+
+
+
+				<?php foreach ($articles as $key => $value): ?>
+	                <!-- Blog Post -->
+                    <article>
+                        <div class="row">
+
+                            <div class="col-md-12">
+                                <h2>
+                                    <a href="?page=article&id-article=<?=$value["id"]?>"><?= ($value["titre"]); ?></a>
+                                </h2>
+                                <p class="author">
+                                    by <a href="index.php"><?= ($value["auteur"]); ?></a>
+                                </p>
+
+                                <img class="img-responsive" src="view/images/<?=($value["image"]);?>" alt="">
+
+                                <p class="description" ><?= ($value["description"]); ?></p>
+
+                                <!--
+                                <p><span class="glyphicon glyphicon-time"></span><?= ($value["date_creation"]); ?></p>
+                                -->
+
+                                <ul>
+                                    <li>
+                                        <a class="readMore" href="?page=article&id-article=<?=$value["id"]?>">Read More ...</a>
+                                    </li>
+                                    <li>
+                                        <?php if(!empty($noteAVG[$value["id"]])): ?>
+                                            Score : <?= $noteAVG[$value["id"]]; ?>
+                                        <?php else: ?>
+                                            <a class="readMore" href="?page=article&id-article=<?=$value["id"]?>">Rate this article !</a>
+                                        <?php endif; ?>
+                                    </li>
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+            	<?php endforeach; ?>
+
+                
+                <!-- Pager -->
+
+                <div class="pagination">
+                <nav>
+                    <ul class="pagination">
+                        <?php for ($i=1; $i<$nbPages+1;$i++): ?>
+                            <li <?php if($i==$pageSelected): ?> class="active" <?php endif; ?> >
+                            <a href="?nbpage=<?= $i ?>"><?= $i ?></a>
+                            </li>
+                        <?php endfor; ?>
+                    </ul>
+                </nav>
+
+                </div>
+
+                <ul class="pager">
+                    <li class="previous">
+                        <a href="#">&larr; Older</a>
+                    </li>
+                    <li class="next">
+                        <a href="#">Newer &rarr;</a>
+                    </li>
+                </ul>
+
+            </div>
+
+        <!-- nav -->
+        <?php include "partials/nav.phtml"; ?>
+
+        </div>
+        <!-- /.row -->
+
+        <!-- Footer -->
+        <?php include "partials/footer.phtml"; ?>
